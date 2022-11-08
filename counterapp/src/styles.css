@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background: url('../Counter.png') ;
+    background-repeat: no-repeat;
+    background-size: 100%  100vh;
+    opacity: 5px;
+}
