@@ -3,14 +3,17 @@
 <ul *ngFor="let todo of todos">
     <li>{{todo.sno}} - {{todo.title}} - {{todo.desc}}</li>
 </ul> -->
-<app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
-<div class="container">
-    <h4>Your Todo List</h4>
-    <div *ngIf="this.todos.length===0; else elseBlock">No Todos to display</div>
-    <ng-template #elseBlock>
-        <div *ngFor="let todo of todos" class="mx-3">
-            <app-todo-item [todo]="todo" (todoDelete)="deteteTodo($event)"></app-todo-item>
-            <!-- custom attribute [todo] is passed with the actual todo of this component to the todo-item component -->
-        </div>
-    </ng-template>
+<div>
+    <h1 class="text-center mb-5">Todo-List by Adnan Sattikar</h1>
+    <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+    <div class="container">
+        <h4>Your Todo List</h4>
+        <div *ngIf="this.todos.length===0; else elseBlock">No Todos to display</div>
+        <ng-template #elseBlock>
+            <div *ngFor="let todo of todos" class="mx-3">
+                <app-todo-item [todo]="todo" (todoDelete)="deteteTodo($event)"></app-todo-item>
+                <!-- custom attribute [todo] is passed with the actual todo of this component to the todo-item component -->
+            </div>
+        </ng-template>
+    </div>
 </div>
